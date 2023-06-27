@@ -2,7 +2,8 @@ const CompressionPlugin = require("compression-webpack-plugin");
 module.exports = {
   title: "胖丁的博客",
   description: "Talk is cheap. Show me the code.",
-  base: "/",
+  // 需要和仓库名一致
+  base: "/blog/",
   head: [
     [
       "link",
@@ -24,6 +25,7 @@ module.exports = {
       lang: "zh-CN",
     },
   },
+  dest: 'docs',
   theme: "reco",
   themeConfig: {
     subSidebar: "auto",
