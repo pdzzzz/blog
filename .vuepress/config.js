@@ -2,7 +2,7 @@ const CompressionPlugin = require("compression-webpack-plugin");
 module.exports = {
   title: "胖丁的博客",
   description: "Talk is cheap. Show me the code.",
-  base: "/pdzz/",
+  base: "/",
   head: [
     [
       "link",
