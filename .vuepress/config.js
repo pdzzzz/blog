@@ -2,8 +2,9 @@ const CompressionPlugin = require("compression-webpack-plugin");
 module.exports = {
   title: "胖丁的博客",
   description: "Talk is cheap. Show me the code.",
-  // 需要和仓库名一致
-  base: "/blog/",
+  // github pages 需要和仓库名一致
+  // 如果绑定域名，则需要设置为 '/'
+  base: "/",
   head: [
     [
       "link",
