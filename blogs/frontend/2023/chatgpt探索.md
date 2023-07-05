@@ -20,11 +20,11 @@ sticky:
 
 
 #### 项目仓库地址
-https://gitee.com/pdzz/pd-openai
+https://gitee.com/pdzz/pd-openai  
 https://gitee.com/pdzz/pluschat
 
 
 #### 相关技术栈
-前端：vite + pinia
-后端：express + sequelize
+前端：vite + pinia  
+后端：express + sequelize  
 部署：前端nginx、后端pm2
