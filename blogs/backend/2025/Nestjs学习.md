@@ -23,7 +23,7 @@ sticky:
 4. [PM2 官方文档](https://pm2.node.org.cn/docs/usage/quick-start/)
 5. [官方 TypeScript 项目模板](https://github.com/nestjs/typescript-starter)
 
-### 一、框架介绍
+# 一、框架介绍
 
 核心定位：NestJS 是高效、可扩展的 Node.js 服务端框架，基于 TypeScript 构建（兼容纯 JS），融合 OOP、FP、FRP 编程思想。
 
@@ -31,9 +31,9 @@ sticky:
 
 核心优势：提供开箱即用的架构，实现高可测试、松耦合、易维护的应用开发，设计灵感源自 Angular。
 
-### 二、开发实战
+# 二、开发实战
 
-#### 2.1 环境准备与项目创建
+## 2.1 环境准备与项目创建
 
 环境要求：Node.js ≥20（推荐 LTS 版本）
 
@@ -52,9 +52,9 @@ cd project-name && npm run start
 
 访问 http://localhost:3000 验证启动成功。
 
-#### 2.2 核心组件及应用场景
+## 2.2 核心组件及应用场景
 
-##### 1. 过滤器（Exception Filter）
+### 1. 过滤器（Exception Filter）
 
 - **场景 1** 统一 HTTP 异常处理
 
@@ -97,7 +97,7 @@ export class BusinessExceptionFilter implements ExceptionFilter {
 }
 ```
 
-##### 2. 守卫（Guard）
+### 2. 守卫（Guard）
 
 - **场景 1** 接口权限校验
 
@@ -131,7 +131,7 @@ export class RoleGuard implements CanActivate {
 }
 ```
 
-##### 3. 中间件（Middleware）
+### 3. 中间件（Middleware）
 
 - **场景 1** 请求日志记录
 
@@ -162,7 +162,7 @@ export class ParamsMiddleware implements NestMiddleware {
 }
 ```
 
-##### 4. 管道（Pipe）
+### 4. 管道（Pipe）
 
 - **场景 1** 数据校验（使用 class-validator）
 
@@ -199,7 +199,7 @@ export class ParseIntPipe implements PipeTransform<string, number> {
 }
 ```
 
-##### 5. 拦截器（Interceptor）
+### 5. 拦截器（Interceptor）
 
 - **场景 1** 响应数据格式化
 
@@ -257,9 +257,9 @@ export class TimeoutInterceptor implements NestInterceptor {
 }
 ```
 
-### 三、部署方案
+# 三、部署方案
 
-#### 3.1 构建生产包
+## 3.1 构建生产包
 
 ```bash
 # 编译 TypeScript 代码
@@ -268,7 +268,7 @@ npm run build
 
 构建产物输出至 dist 目录。
 
-#### 3.2 常用部署方式
+## 3.2 常用部署方式
 
 - 方式 1：Docker 部署（推荐）
   创建 Dockerfile
@@ -319,9 +319,9 @@ module.exports = {
 };
 ```
 
-### 四、日志管理
+# 四、日志管理
 
-#### 4.1 内置日志模块
+## 4.1 内置日志模块
 
 ```typescript
 import { Controller, Get, Logger } from "@nestjs/common";
@@ -340,7 +340,7 @@ export class AppController {
 }
 ```
 
-#### 4.2 集成第三方日志库（Winston）
+## 4.2 集成第三方日志库（Winston）
 
 安装依赖：
 
@@ -379,11 +379,11 @@ async function bootstrap() {
 bootstrap();
 ```
 
-### 五、JWT 认证（实战优化版）
+# 五、JWT 认证（实战优化版）
 
 JWT（JSON Web Token）是 NestJS 中最常用的身份认证方案，结合 `passport` 可实现灵活、安全的接口权限控制，以下是完整实现流程：
 
-#### 5.1 安装核心依赖
+## 5.1 安装核心依赖
 
 ```bash
 # 核心依赖：JWT 模块 + Passport 认证框架
@@ -392,7 +392,7 @@ npm install @nestjs/jwt passport passport-jwt
 npm install -D @types/passport-jwt
 ```
 
-#### 5.2 全局 JWT 模块配置（优化密钥管理）
+## 5.2 全局 JWT 模块配置（优化密钥管理）
 
 ```typescript
 // src/auth/jwt-auth.module.ts
@@ -420,7 +420,7 @@ import { ConfigEnum } from "src/enum/config.enum";
 export class JwtAuthModule {}
 ```
 
-#### 5.3 实现 JWT 策略（Passport 适配）
+## 5.3 实现 JWT 策略（Passport 适配）
 
 ```typescript
 // src/auth/strategies/jwt.strategy.ts
@@ -464,7 +464,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
 }
 ```
 
-#### 5.4 封装 JWT 守卫（全局/局部可用）
+## 5.4 封装 JWT 守卫（全局/局部可用）
 
 ```typescript
 // src/auth/guards/jwt.guard.ts
@@ -479,7 +479,7 @@ import { Injectable } from "@nestjs/common";
 export class JwtGuard extends AuthGuard("jwt") {}
 ```
 
-#### 5.5 生成 JWT Token（登录接口示例）
+## 5.5 生成 JWT Token（登录接口示例）
 
 ```typescript
 // src/modules/auth/auth.service.ts
@@ -523,9 +523,9 @@ export class AuthService {
 }
 ```
 
-#### 5.6 接口使用方式（3 种场景）
+## 5.6 接口使用方式（3 种场景）
 
-##### 方式 1：局部使用（单个控制器/接口）
+### 方式 1：局部使用（单个控制器/接口）
 
 ```typescript
 // src/modules/user/user.controller.ts
@@ -547,7 +547,7 @@ export class UserController {
 }
 ```
 
-##### 方式 2：全局使用（所有接口默认认证）
+### 方式 2：全局使用（所有接口默认认证）
 
 ```typescript
 // src/app.module.ts
@@ -568,7 +568,7 @@ import { JwtAuthModule } from "./auth/jwt-auth.module";
 export class AppModule {}
 ```
 
-##### 方式 3：忽略认证（部分接口放行）
+### 方式 3：忽略认证（部分接口放行）
 
 1. 先定义跳过认证装饰器：
 
