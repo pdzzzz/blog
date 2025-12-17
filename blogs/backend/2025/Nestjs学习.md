@@ -26,7 +26,9 @@ sticky:
 ### 一、框架介绍
 
 核心定位：NestJS 是高效、可扩展的 Node.js 服务端框架，基于 TypeScript 构建（兼容纯 JS），融合 OOP、FP、FRP 编程思想。
+
 底层依赖：默认使用 Express 作为 HTTP 服务器，可替换为 Fastify，支持直接调用底层框架 API 及第三方模块。
+
 核心优势：提供开箱即用的架构，实现高可测试、松耦合、易维护的应用开发，设计灵感源自 Angular。
 
 ### 二、开发实战
@@ -34,7 +36,9 @@ sticky:
 #### 2.1 环境准备与项目创建
 
 环境要求：Node.js ≥20（推荐 LTS 版本）
+
 包管理器：npm/yarn/pnpm（推荐用 nvm 管理 Node 版本）
+
 项目创建（Nest CLI 方式）：
 
 ```bash
