@@ -5,6 +5,10 @@ tags:
   - Nestjs
 categories:
   - 后端
+isShowComments: true
+sticky:
+  - true
+  - 1
 ---
 
 时隔两年多，终于想起更新博客的技术贴。总结下这两年 Nestjs 框架的自学内容。
